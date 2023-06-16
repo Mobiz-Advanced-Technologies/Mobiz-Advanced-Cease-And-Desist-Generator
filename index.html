@@ -1,0 +1,78 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Taviraj">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Mobiz-Advanced-Cease-And-Desist-Generator</title>
+    <style>
+      html {
+				padding: 25px;
+      }
+      
+      hr {
+				margin: 25px;
+      }
+      
+      * {
+				text-align: justify;
+  			text-justify: inter-word;
+        font-family: taviraj; 
+      }
+      
+      .inputs, h1 {
+				text-align: center;
+      }
+      
+      span {
+				padding: 25px;
+        display: block;
+        height: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>
+        Mobiz-Advanced-Cease-And-Desist-Generator
+      </h1>
+			<div class="inputs">
+        <input type="text" ng-model="infringingParty" placeholder="Infringing Party">
+        <input type="text" ng-model="infringedWork" placeholder="Infringed Work">
+        <input type="date" ng-model="removalTimeframe" placeholder="Removal Time frame">
+
+        <input type="text" ng-model="yourName" placeholder="Your Name">
+        <input type="text" ng-model="yourTitle" placeholder="Your Title">
+        <input type="text" ng-model="yourCompanyName" placeholder="Your Company Name">
+        
+        <button onclick="html2pdf(document.getElementById('span'));">
+          Save To PDF
+        </button>
+      </div>
+      <hr>
+			<span id="span">
+        		<h1 style=" text-align: left;">
+            	Notice To Cease And Desist  
+        		</h1>
+			      Dear <b>{{infringingParty}}</b>, <br><br>
+
+            It has come to our attention that you have been reproducing, distributing, and/or publicly displaying our copyrighted work titled "{{infringedWork}}" without authorization. This conduct constitutes copyright infringement in violation of federal law.<br><br>
+
+            We demand that you immediately cease and desist from infringing our copyrights by halting all reproduction, distribution, and public display of "{{infringedWork}}". You must also remove any infringing materials from your website, social media accounts, or other platforms within {{removalTimeframe}}.<br><br>
+
+            Please be advised that we take this matter seriously and will not hesitate to take legal action if necessary to protect our intellectual property rights. We reserve the right to seek injunctive relief, damages, and attorneys’ fees for any continued infringement.<br><br>
+
+            If you have any questions or concerns about this matter, please contact us immediately to discuss a resolution.<br><br>
+
+            Sincerely,<br><br>
+
+            <b>{{yourName}}</b><br>
+
+            {{yourTitle}}<br><br>
+
+            {{yourCompanyName}}
+			</span>
+      <hr>
+    </div>
+  </body>
+</html>
